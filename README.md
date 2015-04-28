@@ -1,0 +1,43 @@
+# Sqone
+Gulp boilerplate for static web pages
+
+## Install
+
+###1. Install node packages
+
+	$ npm install
+
+
+###2. Install bower packages
+
+	$ bower install
+
+
+###3. Build from src folder
+
+	$ gulp build
+
+###4. Start server and watch files for changes
+
+	$ gulp	
+	    	
+
+## Known issues
+
+* critical does not run on build - needs to be ran in adition to build
+* minifyInline breaks src to local jquery files - dependancy issue
+* changes to scss files do currently initiate a browser refresh and re build
+* fonts do not work on IE8
+
+ 
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2014 @alistairtweedie
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
