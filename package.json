@@ -37,6 +37,7 @@
     "gulp-sass": "^0.7.2",
     "gulp-size": "^0.4.0",
     "gulp-stylestats": "^0.5.6",
+    "gulp-tenon-client": "^0.1.1",
     "gulp-uglify": "^1.1.0",
     "gulp-watch": "^0.6.8",
     "psi": "^0.1.6"

@@ -18,6 +18,7 @@ require('./tasks/pre-process');
 require('./tasks/psi');
 require('./tasks/scripts');
 require('./tasks/stylestats');
+require('./tasks/tenon');
 
 
 gulp.task('default', ['bs-reload', 'browser-sync'], function(){
