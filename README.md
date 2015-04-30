@@ -24,9 +24,7 @@ Gulp boilerplate for static web pages
 
 ## Known issues
 
-* critical does not run on build - needs to be ran in adition to build
 * minifyInline breaks src to local jquery files - dependancy issue
-* changes to scss files do currently initiate a browser refresh and re build
 * fonts do not work on IE8
 
  
