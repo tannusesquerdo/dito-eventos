@@ -6,4 +6,4 @@ require('./images');
 require('./html');
 require('./pre-process');
 
-gulp.task('build', ['build-libs', 'build-scripts', 'build-images', 'build-fonts', 'build-html', 'pre-process']);
+gulp.task('build', ['build-libs', 'build-scripts', 'build-images', 'build-fonts', 'build-html', 'pre-process', 'critical']);

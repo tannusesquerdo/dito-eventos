@@ -11,8 +11,9 @@ var gulp = require('gulp'),
 
 gulp.task('pre-process', function(){
   return gulp.src('./src/scss/site.scss')
-      .pipe(watch(function(files) {
-        return files.pipe(sass())
+      // .pipe(watch(function(files) {
+        // return files
+          .pipe(sass())
           .pipe(size({gzip: false, showFiles: true, title:'un-prefixed css'}))
           .pipe(size({gzip: true, showFiles: true, title:'un-prefixed gzipped css'}))
           .pipe(prefix())
@@ -25,5 +26,5 @@ gulp.task('pre-process', function(){
           .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
           .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
           .pipe(browserSync.reload({stream:true}));
-      }));
+      // }));
 });

@@ -1,7 +1,4 @@
-var gulp = require('gulp'),
-    fs = require('fs'),
-    css = require('css'),
-    addsrcs = require('gulp-add-src');
+var gulp = require('gulp');
 
 
 require('./tasks/browser-sync');
@@ -22,10 +19,10 @@ require('./tasks/tenon');
 
 
 gulp.task('default', ['bs-reload', 'browser-sync'], function(){
-  gulp.watch('./src/scss/*.scss', ['pre-process']);
-  gulp.watch('./public/css/site.min.css', ['bs-reload']);
-  gulp.watch('./src/*.html', ['build-html']);
-  gulp.watch('public/*.html', ['bs-reload']);
+  // gulp.watch('./src/scss/*.scss', ['pre-process']);
+  // gulp.watch('./public/css/site.min.css', ['bs-reload']);
+  // gulp.watch('./src/*.html', ['build-html']);
+  // gulp.watch('./public/*.html', ['bs-reload']);
 });
 
 

@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     critical = require('critical');
 
-gulp.task('critical', function () {
+gulp.task('critical', ['pre-process', 'build-html'] ,function () {
     critical.generateInline({
         base: 'public/',
         src: 'index.html',
