@@ -5,9 +5,15 @@ var gulp = require('gulp'),
 
 gulp.task('build-html', function() {
 
+  gulp.src('./src/.htaccess')
+      .pipe(gulp.dest('./public/'));  
+
   var htmlOps = { 
     conditionals: true,
-    spare: true
+    spare: true,
+    cdata: true,
+    quotes: true,
+    comments: true
   };
  
   return gulp.src('./src/*.html')

@@ -10,7 +10,6 @@ gulp.task('build-fonts', function () {
 
 	gulp.src(['src/fonts/*/*.css'])
 
-      .pipe(concat("web-fonts.css"))
       .pipe(gulp.dest('./src/css'))
       .pipe(rename('web-fonts.min.css'))
       .pipe(minifyCSS())

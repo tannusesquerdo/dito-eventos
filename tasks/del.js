@@ -3,6 +3,6 @@ var gulp = require('gulp'),
 
 gulp.task('del', function () {
 
-      del.sync(['public/*']);
+      del.sync(['public/*', 'public/.*']);
 
 });
