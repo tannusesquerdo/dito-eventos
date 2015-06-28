@@ -4,20 +4,23 @@ var gulp = require('gulp'),
     key = '';
 
 gulp.task('mobile', function () {
-  psi({
-    // key: key
-    nokey: 'true',
-    url: site,
-    strategy: 'mobile',
-  });
+    return psi(site, {
+        // key: key
+        nokey: 'true',
+        strategy: 'mobile',
+    }, function (err, data) {
+        console.log(data.score);
+        console.log(data.pageStats);
+    });
 });
 
-
 gulp.task('desktop', function () {
-  psi({
-    // key: key,
-    nokey: 'true',
-    url: site,
-    strategy: 'desktop',
-  });
+    return psi(site, {
+        nokey: 'true',
+        // key: key,
+        strategy: 'desktop',
+    }, function (err, data) {
+        console.log(data.score);
+        console.log(data.pageStats);
+    });
 });
