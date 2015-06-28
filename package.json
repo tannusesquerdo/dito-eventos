@@ -35,7 +35,7 @@
     "gulp-minify-inline-scripts": "0.0.6",
     "gulp-modulizr": "0.0.2",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "2.0.1",
+    "gulp-sass": "2.0.3",
     "gulp-size": "1.2.1",
     "gulp-stylestats": "0.6.1",
     "gulp-tenon-client": "^0.1.1",
