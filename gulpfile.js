@@ -7,6 +7,7 @@ require('./tasks/critical');
 require('./tasks/csslint');
 require('./tasks/del');
 require('./tasks/fonts');
+require('./tasks/handlebars');
 require('./tasks/html');
 require('./tasks/images');
 require('./tasks/libs');
