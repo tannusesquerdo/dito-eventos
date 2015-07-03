@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
-    minifyInline = require('gulp-minify-inline-scripts'),
+    minifyInline = require('gulp-minify-inline'),
     debug = require('gulp-debug');
 
 gulp.task('build-html', ['handlebars'], function() {
@@ -12,10 +12,22 @@ gulp.task('build-html', ['handlebars'], function() {
     quotes: true,
     comments: true
   };
+
+  var minifyOps = {
+    js: {
+        output: {
+            comments: false,
+            inline_script: true
+        }
+    },
+    css: {
+        keepSpecialComments: 1
+    },
+};
  
   return gulp.src('./public/*.html')
     .pipe(minifyHTML(htmlOps))
-    //.pipe(minifyInline()) 
+    .pipe(minifyInline(minifyOps))
     .pipe(gulp.dest('./public/'))
     .pipe(debug());
     
