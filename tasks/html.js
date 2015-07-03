@@ -3,10 +3,7 @@ var gulp = require('gulp'),
     minifyInline = require('gulp-minify-inline-scripts'),
     debug = require('gulp-debug');
 
-gulp.task('build-html', function() {
-
-  gulp.src('./src/.htaccess')
-      .pipe(gulp.dest('./public/'));  
+gulp.task('build-html', ['handlebars'], function() {
 
   var htmlOps = { 
     conditionals: true,
@@ -16,7 +13,7 @@ gulp.task('build-html', function() {
     comments: true
   };
  
-  return gulp.src('./src/*.html')
+  return gulp.src('./public/*.html')
     .pipe(minifyHTML(htmlOps))
     //.pipe(minifyInline()) 
     .pipe(gulp.dest('./public/'))

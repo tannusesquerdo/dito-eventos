@@ -25,13 +25,11 @@ Gulp boilerplate for static web pages
 ###4. Start server and watch files for changes
 
 	$ gulp	
-	    	
+
 
 ## Known issues
 
-* minifyInline breaks src to local jquery files - dependancy issue
-* fonts do not work on IE8
-
+* Critical does not accept multiple source files to run on
  
 ## License
 
