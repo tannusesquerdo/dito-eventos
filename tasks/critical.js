@@ -1,17 +1,19 @@
 var gulp = require('gulp'),
-    critical = require('critical');
+    //critical = require('critical');
+    //fs = require("fs-extra"),
+    critical = require('critical').stream;
 
-gulp.task('critical', ['pre-process', 'build-html'] ,function () {
-    critical.generateInline({
-        base: 'public/',
-        src: 'index.html',    
-        styleTarget: 'css/site.min.css',
-        htmlTarget: 'index.html',
-        width: 320,
-        height: 480,
-        minify: true,
-        inlineImages: true
-    }, function () {
-      console.log(arguments);
-    });
+
+gulp.task('critical', ['pre-process', 'build-html'], function () {
+    return gulp.src('public/*.html')
+        .pipe(critical({
+            base: 'public/',
+            css: 'public/css/site.min.css',
+            inline: true,
+            width: 320,
+            height: 480,
+            minify: true,
+            inlineImages: true
+        }))
+        .pipe(gulp.dest('./public'));
 });
