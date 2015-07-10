@@ -26,10 +26,6 @@ Gulp boilerplate for static web pages
 
 	$ gulp	
 
-
-## Known issues
-
-* Critical does not accept multiple source files to run on
  
 ## License
 
