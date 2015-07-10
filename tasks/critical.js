@@ -1,6 +1,4 @@
 var gulp = require('gulp'),
-    //critical = require('critical');
-    //fs = require("fs-extra"),
     critical = require('critical').stream;
 
 
