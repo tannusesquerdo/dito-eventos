@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     minifyInline = require('gulp-minify-inline'),
     debug = require('gulp-debug');
 
-gulp.task('build-html', ['handlebars'], function() {
+gulp.task('build-html', ['fileinclude'], function() {
 
   var htmlOps = { 
     conditionals: true,

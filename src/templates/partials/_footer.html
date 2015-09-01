@@ -38,12 +38,25 @@ a(h))}}setTimeout(function(){w();y(h)},3E3);t(k,function(a){f=a;x()});r(k,h.fami
     });
 }( this ));
 </script>
+<script src="libs/echo.min.js"></script>
+  <script>
+  echo.init({
+    offset: 100,
+    throttle: 250,
+    unload: false,
+    callback: function (element, op) {
+      console.log(element, 'has been', op + 'ed')
+    }
+  });
 
-<script async src="libs/custom-modernizr.min.js"></script>
+  // echo.render(); is also available for non-scroll callbacks
+  </script>
+
+<script src="libs/custom-modernizr.min.js"></script>
 
 <!--[if gte IE 9]><!-->
-<script async src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script async src="libs/jquery-2.1.3.min.js"><\/script>')</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="libs/jquery-2.1.3.min.js"><\/script>')</script>
 <!--<![endif]-->
 
 <!--[if lte IE 8]>

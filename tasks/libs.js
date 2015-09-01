@@ -20,4 +20,7 @@ gulp.task('build-libs', ['modulizr'], function () {
     gulp.src('./src/libs/picturefill/dist/picturefill.min.js')
     .pipe(gulp.dest('./public/libs/'));
 
+    gulp.src('./src/libs/echojs/dist/echo.min.js')
+    .pipe(gulp.dest('./public/libs/'));
+
 });

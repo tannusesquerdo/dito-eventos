@@ -1,3 +1,10 @@
 @import 'normalize';
 
 /* The rest of your partials go here */
+img {
+    margin: 25px 0;
+    height: 450px;
+    width: 450px;
+    background: #FFF url(../images/ajax.gif) no-repeat center center;
+    border: 1px solid #AAA;
+}
