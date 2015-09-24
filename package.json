@@ -34,7 +34,6 @@
     "gulp-minify-css": "1.1.6",
     "gulp-minify-html": "1.0.3",
     "gulp-minify-inline": "^0.1.0",
-    "gulp-modulizr": "0.0.2",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "2.0.3",
     "gulp-size": "1.2.1",

@@ -11,7 +11,6 @@ require('./tasks/fonts');
 require('./tasks/html');
 require('./tasks/images');
 require('./tasks/libs');
-require('./tasks/modulizr');
 require('./tasks/pre-process');
 require('./tasks/psi');
 require('./tasks/scripts');
