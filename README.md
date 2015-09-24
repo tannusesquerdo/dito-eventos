@@ -1,7 +1,7 @@
 # Sqone
 
 [![Build Status](https://travis-ci.org/alistairtweedie/sqone.svg?branch=master)](https://travis-ci.org/alistairtweedie/sqone)
-[![devDependency Status](https://david-dm.org/alistairtweedie/sqone/dev-status.svg)](https://david-dm.org/alistairtweedie/pintsize#info=devDependencies)
+[![devDependency Status](https://david-dm.org/alistairtweedie/sqone/dev-status.svg)](https://david-dm.org/alistairtweedie/sqone#info=devDependencies)
 
 
 Gulp boilerplate for static web pages
