@@ -19,8 +19,8 @@ gulp.task('pre-process', function(){
           .pipe(gulp.dest('./src/css'))
           .pipe(minifyCSS())
           .pipe(rename('site.min.css'))
-          .pipe(gulp.dest('./public/css/'))
           .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
           .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
+          .pipe(gulp.dest('./public/css/'))
           .pipe(browserSync.reload({stream:true}));
 });
