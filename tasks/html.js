@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     minifyInline = require('gulp-minify-inline'),
-    debug = require('gulp-debug');
+    debug = require('gulp-debug'),
+    util = require("gulp-util");
 
 gulp.task('build-html', ['fileinclude'], function() {
 
@@ -25,10 +26,12 @@ gulp.task('build-html', ['fileinclude'], function() {
     },
 };
  
-  return gulp.src('./public/*.html')
-    .pipe(minifyHTML(htmlOps))
-    .pipe(minifyInline(minifyOps))
-    .pipe(gulp.dest('./public/'))
-    .pipe(debug());
+  // return gulp.src('./public/*.html')
+
+  //   .pipe(!!util.env.prod ? minifyHTML(htmlOps) : util.noop())
+  //   .pipe(!!util.env.prod ? minifyInline(minifyOps) : util.noop())
+
+  //   .pipe(gulp.dest('./public/'))
+  //   .pipe(debug());
     
 });

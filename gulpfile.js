@@ -18,10 +18,10 @@ require('./tasks/stylestats');
 require('./tasks/tenon');
 
 
-gulp.task('default', ['bs-reload', 'browser-sync'], function(){
+gulp.task('serve', ['bs-reload', 'browser-sync'], function(){
   gulp.watch('./src/scss/*.scss', ['pre-process']);
-  gulp.watch('./public/css/site.min.css', ['bs-reload']);
-  gulp.watch('./src/*.html', ['build-html']);
+  gulp.watch('./public/css/site.css', ['bs-reload']);
+  gulp.watch('./src/templates/**/*.html', ['build-html']);
   gulp.watch('./public/*.html', ['bs-reload']);
 });
 

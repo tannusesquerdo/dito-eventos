@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    util = require('gulp-util'),
     critical = require('critical').stream;
 
 
@@ -6,7 +7,7 @@ gulp.task('critical', ['pre-process', 'build-html'], function () {
     return gulp.src('public/*.html')
         .pipe(critical({
             base: 'public/',
-            css: 'public/css/site.min.css',
+            css: 'public/css/site.css',
             inline: true,
             width: 320,
             height: 480,

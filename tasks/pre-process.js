@@ -6,21 +6,25 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     debug = require('gulp-debug'),
     browserSync = require('browser-sync'),
+    util = require("gulp-util"),
     browserReload = browserSync.reload;
 
 gulp.task('pre-process', function(){
   return gulp.src('./src/scss/site.scss')
         .pipe(sass())
-          .pipe(size({gzip: false, showFiles: true, title:'un-prefixed css'}))
-          .pipe(size({gzip: true, showFiles: true, title:'un-prefixed gzipped css'}))
-          .pipe(prefix())
-          .pipe(size({gzip: false, showFiles: true, title:'prefixed css'}))
-          .pipe(size({gzip: true, showFiles: true, title:'prefixed css'}))
-          .pipe(gulp.dest('./src/css'))
-          .pipe(minifyCSS())
-          .pipe(rename('site.min.css'))
-          .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
-          .pipe(size({gzip: true, showFiles: true, title:'minified css'}))
-          .pipe(gulp.dest('./public/css/'))
-          .pipe(browserSync.reload({stream:true}));
+        .pipe(size({gzip: false, showFiles: true, title:'un-prefixed css'}))
+        .pipe(size({gzip: true, showFiles: true, title:'un-prefixed gzipped css'}))
+        .pipe(prefix())
+        .pipe(size({gzip: false, showFiles: true, title:'prefixed css'}))
+        .pipe(size({gzip: true, showFiles: true, title:'prefixed css'}))
+
+        .pipe(!!util.env.prod ? minifyCSS() : util.noop())
+        // .pipe(!!util.env.prod ? rename({
+        //     suffix: ".min"
+        // })
+        // .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
+        // .pipe(size({gzip: true, showFiles: true, title:'minified css'})) : util.noop())
+        
+        .pipe(gulp.dest('./public/css/'))
+        .pipe(browserSync.reload({stream:true}));
 });
