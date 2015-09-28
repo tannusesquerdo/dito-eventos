@@ -12,26 +12,34 @@ Gulp boilerplate for static web pages
 
 	$ npm install
 
-
 ###2. Install bower packages
 
 	$ bower install
 
+###3. Build
 
-###3. Build from src folder
+Builds the site from src folder
 
 	$ gulp build
 
-###4. Start server and watch files for changes
+###4. Start server
 
-	$ gulp	
+Watches for files changes while in active development and refreshes the browser
+
+	$ gulp serve
+
+###5. Build for production
+
+Use when ready to push production ready code live
+
+    $ gulp build --prod    
 
  
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 @alistairtweedie
+Copyright (c) 2015 @alistairtweedie
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
