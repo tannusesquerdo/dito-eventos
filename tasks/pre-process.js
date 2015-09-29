@@ -19,11 +19,6 @@ gulp.task('pre-process', function(){
         .pipe(size({gzip: true, showFiles: true, title:'prefixed css'}))
 
         .pipe(!!util.env.prod ? minifyCSS() : util.noop())
-        // .pipe(!!util.env.prod ? rename({
-        //     suffix: ".min"
-        // })
-        // .pipe(size({gzip: false, showFiles: true, title:'minified css'}))
-        // .pipe(size({gzip: true, showFiles: true, title:'minified css'})) : util.noop())
         
         .pipe(gulp.dest('./public/css/'))
         .pipe(browserSync.reload({stream:true}));
