@@ -20,6 +20,7 @@
   "devDependencies": {
     "bower": "1.5.3",
     "browser-sync": "2.9.6",
+    "compression": "^1.6.0",
     "critical": "0.6.0",
     "css": "2.2.1",
     "del": "2.0.2",
