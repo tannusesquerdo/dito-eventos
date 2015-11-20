@@ -15,6 +15,7 @@ require('./tasks/psi');
 require('./tasks/scripts');
 require('./tasks/stylestats');
 require('./tasks/tenon');
+require('./tasks/uncss');
 
 
 gulp.task('serve', ['bs-reload', 'browser-sync'], function(){

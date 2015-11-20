@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     critical = require('critical').stream;
 
 
-gulp.task('critical', ['pre-process', 'build-html'], function () {
+gulp.task('critical', ['pre-process', 'build-html', 'uncss'], function () {
     return gulp.src('public/*.html')
         .pipe(critical({
             base: 'public/',

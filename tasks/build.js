@@ -19,7 +19,7 @@ buildTasks.push('build-fonts');
 buildTasks.push('build-html');
 buildTasks.push('pre-process');
 
-if(!!util.env.prod) buildTasks.push('critical');
+if(!!util.env.prod) buildTasks.push('uncss','critical');
 
 
 gulp.task('build', buildTasks);
