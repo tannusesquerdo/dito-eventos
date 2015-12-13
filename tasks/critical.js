@@ -12,6 +12,7 @@ gulp.task('critical', ['pre-process', 'build-html', 'uncss'], function () {
             width: 320,
             height: 480,
             minify: true,
+            extract: true,
             inlineImages: true
         }))
         .pipe(gulp.dest('./public'));
