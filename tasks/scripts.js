@@ -10,9 +10,6 @@ gulp.task('build-scripts', function () {
       .pipe(concat("site.js"))
 
         .pipe(!!util.env.prod ? uglify() : util.noop())
-        // .pipe(!!util.env.prod ? rename({
-        //     suffix: ".min"
-        // }) : util.noop())
 
       .pipe(gulp.dest('./public/js'));
 
