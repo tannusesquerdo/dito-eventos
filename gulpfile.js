@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
 
+require('./tasks/accessibility');
 require('./tasks/browser-sync');
 require('./tasks/build');
 require('./tasks/critical');
@@ -14,7 +15,6 @@ require('./tasks/pre-process');
 require('./tasks/psi');
 require('./tasks/scripts');
 require('./tasks/stylestats');
-require('./tasks/tenon');
 require('./tasks/uncss');
 
 
