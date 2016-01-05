@@ -1,4 +1,43 @@
+@charset 'UTF-8';
 
-@import 'normalize';
+// 1. Variables
+@import
+    'utils/variables/v-colors',
+    'utils/variables/v-fonts';
 
-/* The rest of your partials go here */
+// 2. Functions
+@import
+    'utils/functions/functions';
+
+// 3. Mixins
+@import
+    'utils/mixins/m-clearfix',
+    'utils/mixins/m-respond-to';
+
+// 4. Vendors
+@import
+    'vendor/normalize';
+
+// 5. Base stuff
+@import
+    'base/base',
+    'base/fonts',
+    'base/typography',
+    'base/helpers';
+
+// 6. Layout-related sections
+@import
+    'layout/header',
+    'layout/footer';
+
+// 7. Components
+@import
+    'components/buttons';
+
+// 8. Page-specific styles
+@import
+    'pages/home';
+
+// 9. Themes
+@import
+    'themes/default';

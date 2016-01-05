@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains Respond to Sass mixin for media queries
+// -----------------------------------------------------------------------------
+
+@mixin break-at($point) {
+
+    @media (min-width: $point)  {
+
+            @content;
+
+    }
+
+}
