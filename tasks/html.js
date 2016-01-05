@@ -3,7 +3,9 @@ var gulp = require('gulp'),
     minifyInline = require('gulp-minify-inline'),
     debug = require('gulp-debug'),
     fileinclude = require("gulp-file-include"),
-    util = require("gulp-util");
+    util = require("gulp-util"),
+    browserSync = require('browser-sync'),
+    browserReload = browserSync.reload;
 
 gulp.task('build-html', function() {
 
@@ -34,6 +36,7 @@ gulp.task('build-html', function() {
     }))
     .pipe(!!util.env.prod ? minifyHTML(htmlOps) : util.noop())
     .pipe(!!util.env.prod ? minifyInline(minifyOps) : util.noop())
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./public/'))
+    .pipe(browserSync.reload({stream:true}));
     
 });
