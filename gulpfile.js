@@ -14,6 +14,7 @@ require('./tasks/libs');
 require('./tasks/pre-process');
 require('./tasks/psi');
 require('./tasks/scripts');
+require('./tasks/sitemap');
 require('./tasks/stylestats');
 require('./tasks/uncss');
 

@@ -1,0 +1,10 @@
+{
+    "site" : {
+
+        "name": "sqone",
+        "url": "sqone.io",
+        "desciption": "A framework for building lightning fast static sites",
+        "author": "@alistairtweedie"
+
+    }
+}

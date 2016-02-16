@@ -8,6 +8,7 @@ require('./html');
 require('./pre-process');
 require('./del');
 require('./critical');
+require('./sitemap');
 
 var buildTasks = [];
 
@@ -19,7 +20,7 @@ buildTasks.push('build-fonts');
 buildTasks.push('build-html');
 buildTasks.push('pre-process');
 
-if(!!util.env.prod) buildTasks.push('uncss','critical');
+if(!!util.env.prod) buildTasks.push('uncss','critical', 'sitemap');
 
 
 gulp.task('build', buildTasks);
