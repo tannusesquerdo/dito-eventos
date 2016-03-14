@@ -1,6 +1,6 @@
 {
   "name": "sqone",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Gulp boilerplate for static web pages",
   "main": "gulpfile.js",
   "repository": {
@@ -30,13 +30,12 @@
     "gulp-autoprefixer": "3.0.2",
     "gulp-concat": "2.6.0",
     "gulp-csslint": "0.2.0",
+    "gulp-cssnano": "^2.1.1",
     "gulp-data": "^1.2.1",
     "gulp-debug": "2.1.0",
+    "gulp-htmlmin": "^1.3.0",
     "gulp-image-optimization": "0.1.3",
     "gulp-json-format": "^1.0.0",
-    "gulp-minify-css": "1.2.1",
-    "gulp-minify-html": "1.0.4",
-    "gulp-minify-inline": "0.1.1",
     "gulp-nunjucks-render": "^1.1.0",
     "gulp-rename": "1.2.2",
     "gulp-sass": "2.0.4",
@@ -47,7 +46,7 @@
     "gulp-uncss": "^1.0.4",
     "gulp-util": "3.0.6",
     "gulp-watch": "4.3.5",
-    "psi": "1.0.6"
+    "psi": "2.0.2"
   },
   "scripts": {
     "start": "gulp",
