@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
-    minifyCSS = require('gulp-minify-css'),
+    cssnano = require('gulp-cssnano'),
     sass = require('gulp-sass'),
     size = require('gulp-size'),
     rename = require('gulp-rename'),
@@ -18,8 +18,8 @@ gulp.task('pre-process', function(){
         .pipe(size({gzip: false, showFiles: true, title:'prefixed css'}))
         .pipe(size({gzip: true, showFiles: true, title:'prefixed css'}))
 
-        .pipe(!!util.env.prod ? minifyCSS() : util.noop())
-        
+        .pipe(!!util.env.prod ? cssnano() : util.noop())
+
         .pipe(gulp.dest('./public/css/'))
         .pipe(browserSync.reload({stream:true}));
 });

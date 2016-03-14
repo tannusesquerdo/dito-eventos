@@ -3,21 +3,27 @@ var gulp = require('gulp'),
     access = require('gulp-accessibility');
 
 
-gulp.task('accessibility-test', function() {
+gulp.task('accessibility-test', ['build-html'], function() {
 
     return gulp.src('./public/*.html')
         .pipe(access({
             accessibilityLevel: 'WCAG2AA',
             reportType: 'json',
-            reportLocation : 'reports'
+            reportLocation : 'reports/accessibility',
+            verbose: false,
+            reportLevels: {
+                notice: false,
+                warning: true,
+                error: true
+            }
         }))
 
 });
 
 gulp.task('accessibility-report', ['accessibility-test'], function(){
 
-    return gulp.src('./reports/*.json')
+    return gulp.src('./reports/accessibility/*.json')
         .pipe(jsonFormat(4))
-        .pipe(gulp.dest('./reports'));
+        .pipe(gulp.dest('./reports/accessibility'));
 
 });

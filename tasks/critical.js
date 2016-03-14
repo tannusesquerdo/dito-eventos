@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     util = require('gulp-util'),
-    minifyCSS = require('gulp-minify-css'),
     critical = require('critical').stream;
 
 
@@ -13,7 +12,7 @@ gulp.task('critical', ['pre-process', 'build-html', 'uncss'], function () {
             width: 320,
             height: 480,
             minify: true,
-            extract: true,
+            extract: false,
             inlineImages: true
         }))
 });

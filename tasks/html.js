@@ -1,34 +1,20 @@
 var gulp = require('gulp'),
-    minifyHTML = require('gulp-minify-html'),
-    minifyInline = require('gulp-minify-inline'),
     debug = require('gulp-debug'),
     util = require("gulp-util"),
     browserSync = require('browser-sync'),
     nunjucksRender = require('gulp-nunjucks-render'),
     data = require('gulp-data'),
+    htmlmin = require('gulp-htmlmin'),
     browserReload = browserSync.reload;
 
 
 gulp.task('build-html', function() {
 
-    var htmlOps = {
-        conditionals: true,
-        spare: true,
-        cdata: true,
-        quotes: true,
-        comments: true
-    };
-
-    var minifyOps = {
-        js: {
-          output: {
-              comments: false,
-              inline_script: true
-          }
-        },
-        css: {
-          keepSpecialComments: 1
-        },
+    var minOps = {
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true,
+        removeComments: true
     };
 
     nunjucksRender.nunjucks.configure(['./src/templates/'], {watch: false});
@@ -43,13 +29,9 @@ gulp.task('build-html', function() {
 
     }))
 
-
     .pipe(nunjucksRender())
 
-
-    .pipe(!!util.env.prod ? minifyHTML(htmlOps) : util.noop())
-    .pipe(!!util.env.prod ? minifyInline(minifyOps) : util.noop())
-
+    .pipe(!!util.env.prod ? htmlmin(minOps) : util.noop())
 
     .pipe(gulp.dest('./public/'))
     .pipe(browserSync.reload({stream:true}));

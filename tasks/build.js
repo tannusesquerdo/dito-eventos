@@ -9,6 +9,7 @@ require('./pre-process');
 require('./del');
 require('./critical');
 require('./sitemap');
+require('./accessibility');
 
 var buildTasks = [];
 
