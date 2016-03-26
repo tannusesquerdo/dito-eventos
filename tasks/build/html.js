@@ -25,7 +25,7 @@ gulp.task('build-html', function() {
 
     .pipe(data(function() {
 
-        return require('../src/site.json');
+        return require('../../src/site.json');
 
     }))
 

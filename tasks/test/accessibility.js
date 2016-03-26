@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     access = require('gulp-accessibility');
 
 
-gulp.task('accessibility-test', ['build-html'], function() {
+gulp.task('generate-accessibility-report', ['build-html'], function() {
 
     return gulp.src('./public/*.html')
         .pipe(access({
@@ -20,7 +20,7 @@ gulp.task('accessibility-test', ['build-html'], function() {
 
 });
 
-gulp.task('accessibility-report', ['accessibility-test'], function(){
+gulp.task('test-accessibility', ['generate-accessibility-report'], function(){
 
     return gulp.src('./reports/accessibility/*.json')
         .pipe(jsonFormat(4))

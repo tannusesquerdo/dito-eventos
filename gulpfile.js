@@ -1,32 +1,34 @@
 var gulp = require('gulp');
 
+// Build tasks
 
-require('./tasks/accessibility');
-require('./tasks/browser-sync');
 require('./tasks/build');
-require('./tasks/critical');
-require('./tasks/csslint');
-require('./tasks/del');
-require('./tasks/fonts');
-require('./tasks/html');
-require('./tasks/images');
-require('./tasks/libs');
-require('./tasks/pre-process');
-require('./tasks/psi');
-require('./tasks/scripts');
-require('./tasks/sitemap');
-require('./tasks/stylestats');
-require('./tasks/uncss');
+require('./tasks/build/critical');
+require('./tasks/build/csslint');
+require('./tasks/build/fonts');
+require('./tasks/build/html');
+require('./tasks/build/images');
+require('./tasks/build/libs');
+require('./tasks/build/pre-process');
+require('./tasks/build/scripts');
+require('./tasks/build/sitemap');
+require('./tasks/build/uncss');
 
 
-gulp.task('serve', ['bs-reload', 'browser-sync'], function(){
-  gulp.watch('./src/scss/*.scss', ['pre-process']);
-  gulp.watch('./public/css/site.css', ['bs-reload']);
-  gulp.watch('./src/templates/**/*.html', ['build-html']);
-  gulp.watch('./public/*.html', ['bs-reload']);
-  gulp.watch('./src/js/**/*.js', ['build-scripts']);
-  gulp.watch('./public/js/*.js', ['bs-reload']);
-});
+// Test tasks
+
+require('./tasks/test');
+require('./tasks/test/accessibility');
+require('./tasks/test/psi');
+require('./tasks/test/stylestats');
+
+
+
+// Helper tasks
+
+require('./tasks/helper/browser-sync');
+require('./tasks/helper/del');
+require('./tasks/helper/serve');
 
 
 

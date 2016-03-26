@@ -1,19 +1,23 @@
 var gulp = require('gulp'),
     util = require("gulp-util");
 
-require('./libs');
-require('./scripts');
-require('./images');
-require('./html');
-require('./pre-process');
-require('./del');
-require('./critical');
-require('./sitemap');
-require('./accessibility');
+// Helper tasks
+
+require('./helper/del');
+
+// Build tasks
+
+require('./build/libs');
+require('./build/scripts');
+require('./build/images');
+require('./build/html');
+require('./build/pre-process');
+require('./build/critical');
+require('./build/sitemap');
 
 var buildTasks = [];
 
-buildTasks.push('del');
+buildTasks.push('del-build');
 buildTasks.push('build-libs');
 buildTasks.push('build-scripts');
 buildTasks.push('build-images');
