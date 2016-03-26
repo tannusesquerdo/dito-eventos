@@ -2,12 +2,18 @@
 // This file contains a Sass mixin for Older versions of IE.
 // -----------------------------------------------------------------------------
 
-@mixin old-ie {
+@mixin ie($versions: $ie-version) {
 
-    .old-ie & {
+    @if $output-ie {
 
-        @content
+        $sel: ();
+        @each $v in $versions {
+            $sel: append($sel, unquote('.ie-#{$v} &'), comma);
+        }
+
+        #{$sel} {
+            @content;
+        }
 
     }
-
 }

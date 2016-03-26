@@ -3,7 +3,8 @@
 // 1. Variables
 @import
     'utils/variables/v-colors',
-    'utils/variables/v-fonts';
+    'utils/variables/v-fonts',
+    'utils/variables/v-ie-versions';
 
 // 2. Functions
 @import
@@ -12,7 +13,9 @@
 // 3. Mixins
 @import
     'utils/mixins/m-clearfix',
-    'utils/mixins/m-respond-to';
+    'utils/mixins/m-respond-to',
+    'utils/mixins/m-no-js',
+    'utils/mixins/m-old-ie';
 
 // 4. Vendors
 @import
