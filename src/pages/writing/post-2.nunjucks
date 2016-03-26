@@ -4,11 +4,6 @@
 
 {% block content %}
 
-
-{% for post in posts %}
-   <a href="{{ src }}">{{ src }}</a>
-{% endfor %}
+    <h1>This is a post 2</h1>
 
 {% endblock %}
-
-

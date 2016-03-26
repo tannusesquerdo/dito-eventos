@@ -2,7 +2,7 @@
     "site" : {
 
         "name": "sqone",
-        "url": "sqone.io",
+        "url": "http://sqone.io",
         "desciption": "A framework for building lightning fast static sites",
         "author": "@alistairtweedie"
 

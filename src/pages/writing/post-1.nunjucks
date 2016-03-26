@@ -4,6 +4,6 @@
 
 {% block content %}
 
-<h1>This is a post 1</h1>
+    <h1>This is a post 1</h1>
 
 {% endblock %}

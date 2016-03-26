@@ -1,9 +1,14 @@
 <!-- about.nunjucks -->
 {% extends "base.nunjucks" %}
 
-
 {% block content %}
 
-<h1>This is a post 1</h1>
+    {% for post in posts %}
+
+        <a href="{{ src }}">{{ src }}</a>
+
+    {% endfor %}
 
 {% endblock %}
+
+
