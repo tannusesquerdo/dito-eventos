@@ -48,13 +48,8 @@ a {
 
     &:focus {
 
-        color: darken( $primary-brand-color, 10% );
-
-    }
-
-    &:focus {
-
         outline: 2px solid $primary-brand-color;
+        color: darken( $primary-brand-color, 10% );
 
     }
 

@@ -4,6 +4,7 @@ var gulp = require('gulp');
 
 require('./tasks/build');
 require('./tasks/build/critical');
+require('./tasks/build/server-config');
 require('./tasks/build/fonts');
 require('./tasks/build/html');
 require('./tasks/build/images');

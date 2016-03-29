@@ -14,6 +14,7 @@ require('./build/html');
 require('./build/pre-process');
 require('./build/critical');
 require('./build/sitemap');
+require('./build/server-config');
 
 var buildTasks = [];
 
@@ -25,7 +26,7 @@ buildTasks.push('build-fonts');
 buildTasks.push('build-html');
 buildTasks.push('pre-process');
 
-if(!!util.env.prod) buildTasks.push('uncss','critical', 'sitemap');
+if(!!util.env.prod) buildTasks.push('uncss','critical', 'sitemap', 'server-config');
 
 
 gulp.task('build', buildTasks);

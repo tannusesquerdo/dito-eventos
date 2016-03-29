@@ -18,18 +18,24 @@ Gulp boilerplate for static web pages
 
 ###3. Build
 
-Builds the site from src folder
+Builds the project from the src folder.
 
 	$ gulp build
 
 ###4. Start server
 
-Watches for files changes while in active development and refreshes the browser
+Serves the project in the browser and watches for files changes while in active development. Refreshes the browser on file save.
 
 	$ gulp serve
 
-###5. Build for production
+###5. Test 
 
-Use when ready to push production ready code live
+Run tests on the project - page speed, accessibility, stylestats.
+
+    $ gulp test
+
+###6. Build for production
+
+Use when ready to push production ready code live - minifys and optimises the project.
 
     $ gulp build --prod

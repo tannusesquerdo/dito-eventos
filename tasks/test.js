@@ -4,11 +4,12 @@ var gulp = require('gulp'),
 // Helper tasks
 
 require('./helper/del');
+
+// Test tasks
+
 require('./test/accessibility');
 require('./test/psi');
 require('./test/stylestats');
-
-// Test tasks
 
 var testTasks = [];
 

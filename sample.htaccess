@@ -62,5 +62,3 @@ ExpiresDefault "access 1 month"
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
   Header append Vary User-Agent
 </IfModule>
-
-
