@@ -7,6 +7,7 @@ require('./helper/del');
 
 // Build tasks
 
+require('./build/fonts');
 require('./build/libs');
 require('./build/scripts');
 require('./build/images');

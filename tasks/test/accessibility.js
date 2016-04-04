@@ -3,27 +3,31 @@ var gulp = require('gulp'),
     access = require('gulp-accessibility');
 
 
-gulp.task('generate-accessibility-report', ['build-html'], function() {
 
-    return gulp.src('./public/*.html')
-        .pipe(access({
-            accessibilityLevel: 'WCAG2AA',
-            reportType: 'json',
-            reportLocation : 'reports/accessibility',
-            verbose: false,
-            reportLevels: {
-                notice: false,
-                warning: true,
-                error: true
-            }
-        }))
+module.exports = function (date) {
 
-});
+    gulp.task('generate-accessibility-report', ['build-html'], function() {
 
-gulp.task('test-accessibility', ['generate-accessibility-report'], function(){
+        return gulp.src('./public/*.html')
+            .pipe(access({
+                accessibilityLevel: 'WCAG2AA',
+                reportType: 'json',
+                reportLocation : 'reports/' + date + '/accessibility',
+                verbose: false,
+                reportLevels: {
+                    notice: false,
+                    warning: true,
+                    error: true
+                }
+            }))
 
-    return gulp.src('./reports/accessibility/*.json')
-        .pipe(jsonFormat(4))
-        .pipe(gulp.dest('./reports/accessibility'));
+    });
 
-});
+    gulp.task('test-accessibility', ['generate-accessibility-report'], function(){
+
+        return gulp.src('./reports/' + date + 'accessibility/*.json')
+            .pipe(jsonFormat(4))
+            .pipe(gulp.dest('./reports/' + date + '/accessibility'));
+
+    });
+}

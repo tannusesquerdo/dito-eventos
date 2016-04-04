@@ -1,69 +1,40 @@
 var gulp = require('gulp'),
+    fs = require('fs-extra'),
     psi = require('psi'),
     site = 'https://sqone.localtunnel.me',
     key = '';
 
-// gulp.task('psi-mobile', function () {
-//     return psi(site, {
-//         // key: key
-//         nokey: 'true',
-//         strategy: 'mobile',
-//     }).then(function (data) {
-//         console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-//         console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
-//     });
-// });
 
-// gulp.task('psi-desktop', function () {
-//     return psi(site, {
-//         nokey: 'true',
-//         // key: key,
-//         strategy: 'desktop',
-//     }).then(function (data) {
-//         console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-//     });
-// });
+module.exports = function (date) {
 
-gulp.task('test-psi-mobile', function () {
+    gulp.task('test-psi-mobile', function () {
 
-    // get the PageSpeed Insights report
-    return psi(site).then(function (data) {
-      console.log(data.ruleGroups.SPEED.score);
-      console.log(data.pageStats);
+        // get the PageSpeed Insights report
+        psi(site, { nokey: 'true', strategy: 'mobile' }).then(function (data) {
+            writeJsonToFile('./reports/' + date + '/page-speed/mobile-page-speed.json', data, function () {
+                console.log("Yaaasss");
+            });
+        });
+
     });
 
-    // output a formatted report to the terminal
-    return psi.output(site).then(function () {
-      console.log('done');
+    gulp.task('test-psi-desktop', function () {
+
+        // get the PageSpeed Insights report
+        psi(site, { nokey: 'true', strategy: 'desktop' }).then(function (data) {
+            writeJsonToFile('./reports/' + date + '/page-speed/desktop-page-speed.json', data)
+        });
+
     });
 
-    // Supply options to PSI and get back speed and usability scores
-    return psi(site, { nokey: 'true', strategy: 'mobile' }).then(function (data) {
-      console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-      console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
+    gulp.task('test-page-speed', ['test-psi-desktop', 'test-psi-mobile']);
+
+}
+
+
+function writeJsonToFile(name, data) {
+
+    fs.ensureFile(name, function() {
+        fs.writeFile(name, JSON.stringify(data, null, 4));
     });
-
-});
-
-gulp.task('test-psi-desktop', function () {
-
-    // get the PageSpeed Insights report
-    return psi(site).then(function (data) {
-      console.log(data.ruleGroups.SPEED.score);
-      console.log(data.pageStats);
-    });
-
-    // output a formatted report to the terminal
-    return psi.output(site).then(function () {
-      console.log('done');
-    });
-
-    // Supply options to PSI and get back speed and usability scores
-    return psi(site, { nokey: 'true', strategy: 'desktop' }).then(function (data) {
-      console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-      console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
-    });
-
-});
-
-gulp.task('test-page-speed', ['test-psi-desktop', 'test-psi-mobile']);
+}
