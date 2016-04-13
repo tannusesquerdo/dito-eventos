@@ -1,9 +1,0 @@
-<!-- about.nunjucks -->
-{% extends "base.nunjucks" %}
-
-
-{% block content %}
-
-    <h1>This is a post 2</h1>
-
-{% endblock %}

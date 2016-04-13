@@ -16,10 +16,11 @@ require('./build/pre-process');
 require('./build/critical');
 require('./build/sitemap');
 require('./build/server-config');
+require('./build/uncss');
 
 var buildTasks = [];
 
-buildTasks.push('del-build');
+buildTasks.push('del');
 buildTasks.push('build-libs');
 buildTasks.push('build-scripts');
 buildTasks.push('build-images');

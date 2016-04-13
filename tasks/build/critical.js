@@ -4,10 +4,10 @@ var gulp = require('gulp'),
 
 
 gulp.task('critical', ['pre-process', 'build-html', 'uncss'], function () {
-    return gulp.src('public/*.html')
+    return gulp.src('./public/*.html')
         .pipe(critical({
-            base: 'public/',
-            css: 'public/css/site.css',
+            base: './public/',
+            css: './public/css/site.css',
             inline: true,
             width: 320,
             height: 480,
