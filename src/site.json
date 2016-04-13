@@ -7,12 +7,9 @@
     },
     "posts" : [{
         "title": "this is post one",
-        "link": "#"
-    }, {
+        "link": "#",
+        }, {
         "title": "this is post two",
         "link": "#"
-    }],
-    "server" : {
-        "apache": "htaccess"
-    }
+    }]
 }
