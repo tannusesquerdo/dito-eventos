@@ -1,11 +1,8 @@
 {
     "site" : {
-        "name": "sqone",
+        "name": "Sqone",
         "url": "http://sqone.io",
-        "desciption": "A framework for building lightning fast static sites",
+        "description": "A framework for building lightning fast static sites",
         "author": "@alistairtweedie"
-    },
-    "server" : {
-        "apache": "htaccess"
     }
 }
