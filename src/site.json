@@ -5,6 +5,13 @@
         "desciption": "A framework for building lightning fast static sites",
         "author": "@alistairtweedie"
     },
+    "posts" : [{
+        "title": "this is post one",
+        "link": "#"
+    }, {
+        "title": "this is post two",
+        "link": "#"
+    }],
     "server" : {
         "apache": "htaccess"
     }

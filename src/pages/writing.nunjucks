@@ -2,12 +2,17 @@
 {% extends "base.nunjucks" %}
 
 {% block content %}
+    <ul>
 
     {% for post in posts %}
 
-        <a href="{{ src }}">{{ src }}</a>
+        <li>
+            <a href="{{ post.link }}">{{ post.title }}</a>
+        </li>
 
     {% endfor %}
+
+    </ul>
 
 {% endblock %}
 
