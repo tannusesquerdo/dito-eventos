@@ -15,7 +15,6 @@ require('./test/stylestats')(date);
 
 var testTasks = [];
 
-// testTasks.push('del-test');
 testTasks.push('test-accessibility');
 testTasks.push('test-page-speed');
 testTasks.push('test-stylestats');
