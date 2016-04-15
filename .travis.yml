@@ -11,3 +11,4 @@ script:
 branches:
   except:
     - gh-pages
+
