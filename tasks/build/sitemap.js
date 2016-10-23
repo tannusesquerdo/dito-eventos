@@ -4,7 +4,11 @@ var gulp = require('gulp'),
 gulp.task('sitemap', ['build-html'], function () {
     gulp.src('./public/**/*.html')
         .pipe(sitemap({
-            siteUrl: 'http://sqone.it'
+            siteUrl: 'http://sqone.it',
+            lastmod: Date.now(),
+            getLoc: function(siteUrl, loc, entry) {
+                return loc.substr(0, loc.lastIndexOf('.')) || loc; // Removes the file extension
+            }
         }))
         .pipe(gulp.dest('./public'));
 });

@@ -1,33 +1,25 @@
 var gulp = require('gulp'),
     jsonFormat = require('gulp-json-format'),
+    rename = require('gulp-rename'),
     access = require('gulp-accessibility');
 
 
 
 module.exports = function (date) {
 
-    gulp.task('generate-accessibility-report', ['build-html'], function() {
+    gulp.task('test-accessibility', function() {
+      return gulp.src('./public/*.html')
+        .pipe(access({
+          force: true
+        }))
+        .on('error', console.log)
+        .pipe(access.report({reportType: 'json'}))
+        .pipe(jsonFormat(4))
+        .pipe(rename({
+          extname: '.json'
+        }))
 
-        return gulp.src('./public/*.html')
-            .pipe(access({
-                accessibilityLevel: 'WCAG2AA',
-                reportType: 'json',
-                reportLocation : 'reports/' + date + '/accessibility',
-                verbose: false,
-                reportLevels: {
-                    notice: false,
-                    warning: true,
-                    error: true
-                }
-            }))
-
+        .pipe(gulp.dest('./reports/' + date + '/accessibility'));
     });
 
-    gulp.task('test-accessibility', ['generate-accessibility-report'], function(){
-
-        return gulp.src('./reports/' + date + 'accessibility/*.json')
-            .pipe(jsonFormat(4))
-            .pipe(gulp.dest('./reports/' + date + '/accessibility'));
-
-    });
 }

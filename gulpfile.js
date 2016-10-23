@@ -3,11 +3,6 @@ var gulp = require('gulp');
 // Helper tasks
 
 require('./tasks/helper/browser-sync');
-require('./tasks/helper/serve');
-
-// Helper tasks
-
-require('./tasks/helper/browser-sync');
 require('./tasks/helper/del');
 require('./tasks/helper/serve');
 

@@ -17,7 +17,11 @@ gulp.task('build-html', function() {
         removeComments: true
     };
 
-    return gulp.src('./src/pages/**/*.html')
+    return gulp.src([
+
+        './src/pages/*.html'
+
+    ])
 
     .pipe(data(function(file) {
 
