@@ -1,13 +1,11 @@
 {
     "site" : {
 
-            "name": "Sqone",
-            "url": "http://sqone.io",
-            "urlRoot" : "/",
-            "description": "A framework for building lightning fast static sites",
-            "author": "@alistairtweedie",
-            "email": "sqone@sqone.io",
-            "server" : "apache",
-            "googleanalyticsid" : "UA-XXXXX-X"
+        "name": "Sqone",
+        "url": "http://sqone.io",
+        "description": "A framework for building lightning fast static sites",
+        "author": "@alistairtweedie",
+        "email": "sqone@sqone.io",
+        "googleanalyticsid" : "UA-XXXXX-X"
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "sqone",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "authors": [
     "author <info@alistairtweedie.com>"
   ],
@@ -15,7 +15,8 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
+    "normalize-css": "^5.0.0",
     "lt-ie-9": "0.1.0",
     "picturefill": "2.3.1"
   }

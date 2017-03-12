@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     sitemap = require('gulp-sitemap');
 
-gulp.task('sitemap', ['build-html'], function () {
+gulp.task('sitemap', ['build-templates'], function () {
     gulp.src('./public/**/*.html')
         .pipe(sitemap({
             siteUrl: 'http://sqone.it',

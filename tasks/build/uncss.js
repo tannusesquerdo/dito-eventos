@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     uncss = require('gulp-uncss');
 
 
-gulp.task('uncss', ['pre-process', 'build-html'], function () {
+gulp.task('uncss', ['build-styles', 'build-templates'], function () {
     return gulp.src('./public/css/site.css')
 
         .pipe(size({gzip: false, showFiles: true, title:'before uncss css'}))
@@ -12,7 +12,7 @@ gulp.task('uncss', ['pre-process', 'build-html'], function () {
         .pipe(uncss({
             html: ['./public/*html']
         }))
-        
+
         .pipe(size({gzip: false, showFiles: true, title:'after uncss css'}))
         .pipe(size({gzip: true, showFiles: true, title:'after uncss gzipped css'}))
 });

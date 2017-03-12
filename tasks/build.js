@@ -11,8 +11,8 @@ require('./build/fonts');
 require('./build/libs');
 require('./build/scripts');
 require('./build/images');
-require('./build/html');
-require('./build/pre-process');
+require('./build/templates');
+require('./build/styles');
 require('./build/critical');
 require('./build/sitemap');
 require('./build/server-config');
@@ -25,10 +25,10 @@ buildTasks.push('build-libs');
 buildTasks.push('build-scripts');
 buildTasks.push('build-images');
 buildTasks.push('build-fonts');
-buildTasks.push('build-html');
-buildTasks.push('pre-process');
+buildTasks.push('build-templates');
+buildTasks.push('build-styles');
 
-if(!!util.env.prod) buildTasks.push('uncss','critical', 'sitemap', 'server-config');
+if(!!util.env.production) buildTasks.push('uncss','critical', 'sitemap', 'server-config');
 
 
 gulp.task('build', buildTasks);

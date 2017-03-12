@@ -3,9 +3,8 @@ var gulp = require('gulp'),
 
 gulp.task('server-config', function () {
 
-    gulp.src('./sample.htaccess')
+    gulp.src('./.htaccess')
 
-    .pipe(rename('.htaccess'))
     .pipe(gulp.dest('./public/'));
 
 });

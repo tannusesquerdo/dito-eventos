@@ -38,4 +38,4 @@ Run tests on the project - page speed, accessibility, stylestats.
 
 Use when ready to push production ready code live - minifys files, runs uncss, extracts critical css and generates a sitemap.
 
-    $ gulp build --prod
+    $ gulp build --production

@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--Favicon-->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
 
   <script>
         document.documentElement.className =
@@ -21,7 +21,7 @@
   </script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="/css/site.css">
 
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
@@ -50,7 +50,7 @@
   </style>
 
 
-  <script async src="libs/picturefill.js"></script>
+  <script async src="/libs/picturefill.js"></script>
 
   <!--[if lt IE 9]>
     <script src="libs/lt-ie-9.js"></script>
@@ -65,7 +65,10 @@
 
 <header>
     <nav>
-        <a href="{{ site.urlRoot }}">Home</a>
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <a href="/projects">Projects</a>
+        <a href="/about">About</a>
     </nav>
 </header>
 
@@ -113,7 +116,7 @@ a(h))}}setTimeout(function(){w();y(h)},3E3);t(k,function(a){f=a;x()});r(k,h.fami
 }( this ));
 </script>
 
-<script src="js/site.js"></script>
+<script src="/js/site.js"></script>
 
 <script>
     (function(b, o, i, l, e, r) {
@@ -128,7 +131,7 @@ a(h))}}setTimeout(function(){w();y(h)},3E3);t(k,function(a){f=a;x()});r(k,h.fami
         e.src = '//www.google-analytics.com/analytics.js';
         r.parentNode.insertBefore(e, r)
     }(window, document, 'script', 'ga'));
-    ga('create', '{{ site.config.googleanalyticsid }}', 'auto');
+    ga('create', '{{ site.googleanalyticsid }}', 'auto');
     ga('send', 'pageview');
 </script>
 

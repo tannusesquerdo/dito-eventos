@@ -4,6 +4,7 @@ var gulp = require('gulp');
 
 require('./tasks/helper/browser-sync');
 require('./tasks/helper/del');
+require('./tasks/helper/deploy');
 require('./tasks/helper/serve');
 
 

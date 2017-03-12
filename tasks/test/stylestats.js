@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 
 
 module.exports = function (date) {
+
     gulp.task('test-stylestats', function () {
 
       gulp.src('./public/css/*.css')
@@ -16,4 +17,5 @@ module.exports = function (date) {
         .pipe(gulp.dest('./reports/' + date + '/stylestats'));
 
     });
+
 }

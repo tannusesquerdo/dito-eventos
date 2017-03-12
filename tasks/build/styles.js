@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     util = require("gulp-util"),
     browserReload = browserSync.reload;
 
-gulp.task('pre-process', function(){
+gulp.task('build-styles', function(){
   return gulp.src('./src/scss/site.scss')
         .pipe(sass())
         .pipe(size({gzip: false, showFiles: true, title:'un-prefixed css'}))
@@ -24,9 +24,9 @@ gulp.task('pre-process', function(){
           'important': false,
           'known-properties': false
         }))
-        .pipe(csslint.reporter())
+        .pipe(csslint.formatter())
 
-        .pipe(!!util.env.prod ? cssnano() : util.noop())
+        .pipe(!!util.env.production ? cssnano() : util.noop())
 
         .pipe(gulp.dest('./public/css/'))
         .pipe(browserSync.reload({stream:true}));

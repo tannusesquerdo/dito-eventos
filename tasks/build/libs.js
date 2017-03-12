@@ -4,13 +4,13 @@ var gulp = require('gulp'),
     util = require("gulp-util");
 
 gulp.task('build-libs', function () {
-    
+
     gulp.src('./src/libs/lt-ie-9/lt-ie-9.js')
-    .pipe(!!util.env.prod ? uglify() : util.noop())
+    .pipe(!!util.env.production ? uglify() : util.noop())
     .pipe(gulp.dest('./public/libs/'));
 
     gulp.src('./src/libs/picturefill/dist/picturefill.js')
-    .pipe(!!util.env.prod ? uglify() : util.noop())
+    .pipe(!!util.env.production ? uglify() : util.noop())
     .pipe(gulp.dest('./public/libs/'));
 
 });

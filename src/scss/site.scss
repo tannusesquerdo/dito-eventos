@@ -17,9 +17,9 @@
     'utils/mixins/m-no-js',
     'utils/mixins/m-old-ie';
 
-// 4. Vendors
-//@import
- //   'vendor/normalize';
+// 4. libs
+@import
+   '../libs/normalize-css/normalize';
 
 // 5. Base stuff
 @import
