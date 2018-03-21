@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     fs = require('fs-extra'),
     psi = require('psi'),
-    site = 'https://sqone.localtunnel.me',
+    config = require('../../src/site.json'),
+    site = config.site.url,
     key = '';
 
 

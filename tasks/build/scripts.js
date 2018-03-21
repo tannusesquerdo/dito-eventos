@@ -5,35 +5,38 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
 	util = require("gulp-util");
 
-var eslintConfig = {
+gulp.task('lint-scripts', () => {
 
-    rulePaths: [],
-    rules: {
-        'quotes': [2, 'single'],
-        'strict': 0,
-        'global-strict': 0
-    },
-    globals: {
-        'jQuery':false,
-        '$':true
-    },
-    envs: [
-        'browser'
-    ]
+    return gulp.src('./src/js/**/*.js')
 
-};
+        .pipe(eslint({
+            rules: {
+                'quotes': [2, 'single'],
+                'strict': 0,
+                'global-strict': 0
+            },
+            globals: [
+                'jQuery',
+                '$'
+            ],
+            envs: [
+                'browser'
+            ]
+        }))
 
-gulp.task('build-scripts', function () {
-
-    gulp.src(['src/js/*.js'])
-
-        .pipe(eslint(eslintConfig))
         .pipe(eslint.format())
 
-        .pipe(concat("site.js"))
-
-        .pipe(!!util.env.production ? uglify() : util.noop())
-
-        .pipe(gulp.dest('./public/js'));
-
+        .pipe(eslint.failAfterError());
 });
+
+gulp.task('build-scripts', ['lint-scripts'], function () {
+
+    return gulp.src('./src/js/*.js')
+
+    .pipe(concat("site.js"))
+
+    .pipe(!!util.env.production ? uglify() : util.noop())
+
+    .pipe(gulp.dest('./public/js'));
+});
+
