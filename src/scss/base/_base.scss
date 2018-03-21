@@ -10,6 +10,14 @@ html {
     box-sizing: border-box;
 }
 
+body {
+
+    -webkit-font-smoothing: antialiased;
+    color: $black;
+
+}
+
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -19,37 +27,5 @@ html {
 *, *::before, *::after {
 
     box-sizing: inherit;
-
-}
-
-/**
- * Basic styles for links
- */
-a {
-
-    color: $primary-brand-color;
-    cursor: pointer;
-    text-decoration: none;
-    outline: 0;
-
-    &:hover {
-
-        color: #ff9c08;
-        text-decoration: underline;
-
-    }
-
-    &:active {
-
-        color: darken( $primary-brand-color, 10% );
-
-    }
-
-    &:focus {
-
-        outline: 2px solid $primary-brand-color;
-        color: darken( $primary-brand-color, 10% );
-
-    }
 
 }

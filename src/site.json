@@ -1,11 +1,29 @@
 {
-    "site" : {
+    "site": {
 
         "name": "Sqone",
-        "url": "http://sqone.io",
-        "description": "A framework for building lightning fast static sites",
+        "url": "http://localhost:3000",
+        "description": "Build ⚡ lightening fast static sites",
         "author": "@alistairtweedie",
-        "email": "sqone@sqone.io",
-        "googleanalyticsid" : "UA-XXXXX-X"
+        "googleanalyticsid": "UA-XXXXX-X"
+
+    },
+    "server": {
+
+        "staging": {
+
+            "hostname": "hostname.yourserve.example",
+            "username": "hostusernameexample",
+            "destination": "link/to/your/directory"
+
+        },
+        "production": {
+
+            "hostname": "hostname.yourserve.example",
+            "username": "hostusernameexample",
+            "destination": "link/to/your/directory"
+
+        }
+
     }
 }

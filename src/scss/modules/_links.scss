@@ -1,0 +1,30 @@
+/**
+ * Basic styles for links
+ */
+a {
+
+    color: $red;
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+
+    &:hover {
+
+        color: darken( $red, 10% );
+        text-decoration: underline;
+
+    }
+
+    &:active {
+
+        color: darken( $red, 15% );
+
+    }
+
+    &:focus {
+
+        color: darken( $red, 15% );
+
+    }
+
+}

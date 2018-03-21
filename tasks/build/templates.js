@@ -17,11 +17,11 @@ gulp.task('build-templates', function() {
         removeComments: true
     };
 
-    return gulp.src('./src/pages/**/*.+(html|nunjucks)')
+    return gulp.src('./src/templates/pages/**/*.+(html|nunjucks)')
 
     .pipe(data(function(file) {
 
-        return require('./../../src/site.json');
+        return require('../../src/site.json');
 
     }))
 

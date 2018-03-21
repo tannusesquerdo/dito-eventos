@@ -11,8 +11,11 @@ gulp.task('critical', ['build-styles', 'build-templates', 'uncss'], function () 
             base: './public/',
             inline: true,
             minify: true,
-            css: ['./public/css/site.css']}
-        ))
+            width: 1300,
+            height: 900,
+            css: ['./public/css/site.css'],
+            ignore: ['@font-face',/url\(/]
+        }))
         .on('error', function(err) {
             gutil.log(gutil.colors.red(err.message));
         })

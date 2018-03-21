@@ -1,14 +1,13 @@
 var gulp = require('gulp'),
+    data = require('gulp-data'),
     sitemap = require('gulp-sitemap');
+
+var config = require('../../src/site.json');
 
 gulp.task('sitemap', ['build-templates'], function () {
     gulp.src('./public/**/*.html')
         .pipe(sitemap({
-            siteUrl: 'http://sqone.it',
-            lastmod: Date.now(),
-            getLoc: function(siteUrl, loc, entry) {
-                return loc.substr(0, loc.lastIndexOf('.')) || loc; // Removes the file extension
-            }
+            siteUrl: config.site.url
         }))
         .pipe(gulp.dest('./public'));
 });

@@ -1,4 +1,3 @@
-
 var gulp   = require('gulp'),
     gutil = require('gulp-util'),
     argv  = require('minimist')(process.argv),
@@ -8,56 +7,71 @@ var gulp   = require('gulp'),
 
 gulp.task('deploy', function() {
 
-  rsyncPath = './public/';
+    rsyncPath = './public/';
 
-  rsyncConf = {
-    root: rsyncPath,
-    progress: true,
-    incremental: true,
-    relative: true,
-    emptyDirectories: true,
-    recursive: true,
-    clean: true,
-    exclude: [],
-  };
+    var conf = require('../../src/site.json');
 
-  // Staging
-  if (argv.staging) {
+    rsyncConf = {
+        root: rsyncPath,
+        progress: true,
+        incremental: true,
+        relative: true,
+        emptyDirectories: true,
+        recursive: true,
+        clean: true,
+        exclude: [],
+    };
 
-    rsyncConf.hostname = 's174565.gridserver.com';
-    rsyncConf.username = 's174565.gridserver.com';
-    rsyncConf.destination = 'domains/demo.sqone.it/html/';
+    // Staging config
+    if (argv.staging) {
 
-  // Production
-  } else if (argv.production) {
+        rsyncConf.hostname = conf.server.staging.hostname;
+        rsyncConf.username = conf.server.staging.username;
+        rsyncConf.destination = conf.server.staging.destination;
 
-    rsyncConf.hostname = 's174565.gridserver.com';
-    rsyncConf.username = 's174565.gridserver.com';
-    rsyncConf.destination = 'domains/sqone.it/html/';
+    // Production config
+    } else if (argv.production) {
 
-  // Missing/Invalid Target
-  } else {
-    throwError('deploy', gutil.colors.red('Missing or invalid target'));
-  }
+        rsyncConf.hostname = conf.server.production.hostname;
+        rsyncConf.username = conf.server.production.username;
+        rsyncConf.destination = conf.server.production.destination;
 
+    // Missing/Invalid Target
+    } else {
 
-  // Use gulp-rsync to sync the files
-  return gulp.src(rsyncPath)
-  .pipe(gulpif(
-      argv.production,
-      prompt.confirm({
+        throwError('deploy', gutil.colors.red('Missing or invalid target'));
+
+    }
+
+    // Get path to rsync up to the server
+    return gulp.src(rsyncPath)
+
+    // Use gulp-rsync to sync the files to staging
+    .pipe(gulpif(
+        argv.staging,
+        prompt.confirm({
+        message: gutil.colors.yellow('Heads Up!') + ' Are you SURE you want to push to ' + gutil.colors.red('Staging?'),
+        default: false
+        })
+    ))
+
+    // Use gulp-rsync to sync the files to production
+    .pipe(gulpif(
+        argv.production,
+        prompt.confirm({
         message: gutil.colors.yellow('Heads Up!') + ' Are you SURE you want to push to ' + gutil.colors.red('PRODUCTION?'),
         default: false
-      })
-  ))
-  .pipe(rsync(rsyncConf));
+        })
+    ))
+
+    .pipe(rsync(rsyncConf));
 
 });
 
 
 function throwError(taskName, msg) {
-  throw new gutil.PluginError({
-      plugin: taskName,
-      message: msg
+    throw new gutil.PluginError({
+        plugin: taskName,
+        message: msg
     });
 }
