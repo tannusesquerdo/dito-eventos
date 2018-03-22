@@ -1,10 +1,9 @@
 # Sqone
 
+Build ⚡ lightening fast static sites
+
 [![Build Status](https://travis-ci.org/alistairtweedie/sqone.svg?branch=master)](https://travis-ci.org/alistairtweedie/sqone)
 [![devDependency Status](https://david-dm.org/alistairtweedie/sqone/dev-status.svg)](https://david-dm.org/alistairtweedie/sqone#info=devDependencies)
-
-
-Gulp boilerplate for static web pages
 
 ## Install
 
@@ -16,26 +15,34 @@ Gulp boilerplate for static web pages
 
 	$ bower install
 
-### 3. Build
+## Usage
 
-Builds the project from the src folder.
+### 1. Build
+
+Builds the project from the `src` folder.
 
 	$ gulp build
 
-### 4. Start server
+### 2. Start server
 
-Serves the project in the browser and watches for files changes while in active development. Refreshes the browser on file save.
+Serves the project in the browser on `localhost:3000` and watches for files changes in the `src` folder while in active development. Refreshes the browser on file save.
 
 	$ gulp serve
 
-### 5. Test 
+### 3. Test
 
-Run tests on the project - page speed, accessibility, stylestats.
+Run tests on the project - page speed, accessibility, stylestats. These are output in a `reports` folder
 
     $ gulp test
 
-### 6. Build for production
+### 4. Build for production
 
-Use when ready to push production ready code live - minifys files, runs uncss, extracts critical css and generates a sitemap.
+Use when ready to deploy to production - minifys files, runs uncss, extracts critical css and generates a sitemap based on files in the `src/templates/pages` folder.
 
     $ gulp build --production
+
+### 5. Deploy
+
+You can deploy your production ready code to your server by inserting your server details in `site.json`
+
+    $ gulp deploy --production
