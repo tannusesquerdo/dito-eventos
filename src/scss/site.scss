@@ -19,7 +19,8 @@
 
 // 4. libs
 @import
-   '../libs/normalize-css/normalize';
+   '../libs/normalize-css/normalize',
+   '../libs/Pintsize/dist/pintsize.min';
 
 // 5. Base stuff
 @import
@@ -30,4 +31,6 @@
 // 7. Components
 @import
     'modules/typography',
-    'modules/links';
+    'modules/links',
+    'modules/header',
+    'modules/home';

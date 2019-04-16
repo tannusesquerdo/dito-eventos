@@ -1,12 +1,11 @@
 {
     "site": {
 
-        "name": "Sqone",
+        "name": "Dito Eventos",
         "url": "http://localhost:3000",
-        "description": "Build ⚡ lightening fast static sites",
-        "author": "@alistairtweedie",
+        "description": "",
+        "author": "Dito",
         "googleanalyticsid": "UA-XXXXX-X"
-
     },
     "server": {
 

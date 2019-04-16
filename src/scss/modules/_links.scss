@@ -3,27 +3,27 @@
  */
 a {
 
-    color: $red;
+    color: $black;
     cursor: pointer;
     text-decoration: none;
     outline: 0;
 
     &:hover {
 
-        color: darken( $red, 10% );
+        color: darken( $black, 10% );
         text-decoration: underline;
 
     }
 
     &:active {
 
-        color: darken( $red, 15% );
+        color: darken( $black, 15% );
 
     }
 
     &:focus {
 
-        color: darken( $red, 15% );
+        color: darken( $black, 15% );
 
     }
 

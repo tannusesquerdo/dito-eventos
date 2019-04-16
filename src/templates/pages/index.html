@@ -3,11 +3,59 @@
 
 
 {% block content %}
+	<div class="flex flex--center">
+		<div class="col col--12 col__lg--6">
+			<form action="" id="form-event" class="form-event" novalidate="novalidate">
+				<p>
+					<label> Seu nome (obrigatório)<br>
+						<span class="form-control-wrap">
+							<input type="text" id="name" name="name" value="" placeholder="Digite seu nome" aria-required="true" aria-invalid="false">
+						</span>
+					</label>
+				</p>
+				<p>
+					<label> Seu e-mail (obrigatório)<br>
+						<span class="wpcf7-form-control-wrap">
+							<input type="text" id="email" name="email" value="" placeholder="Digite seu email" aria-required="true" aria-invalid="false">
+						</span>
+					</label>
+				</p>
+				<p>
+					<label> Seu telefone<br>
+						<span class="wpcf7-form-control-wrap">
+							<input type="text" id="phone" name="phone" value="" placeholder="Digite seu telefone" aria-required="true" aria-invalid="false">
+						</span>
+					</label>
+				</p>
+				<p>
+					<label> Seu Carrgo<br>
+						<span class="wpcf7-form-control-wrap">
+							<input type="text" id="cargo" name="cargo" value="" placeholder="Digite seu cargo">
+						</span>
+					</label>
+				</p>
+				<p>
+					<label> Sua empresa<br>
+						<span class="wpcf7-form-control-wrap">
+							<input type="text" id="company" name="company" value="" placeholder="Digite a empresa">
+						</span>
+					</label>
+				</p>
 
-    <h1>{{site.name}}</h1>
-
-    <p>{{ site.description }}</p>
-
-    <p>By <a href="https://twitter.com/alistairtweedie">{{ site.author }}</a></p>
-
+				<p>
+					<button type="submit" id="btn-submit" class="form-submit">
+						<span>Enviar</span>
+						<div class="circle" size="27">
+							<div class="triangle" size="4" color="#FFFFFF" direction="right"></div>
+						</div>
+					</button>
+				</p>
+			</form>
+			<div id="success" class="success">
+				<img src="../images/icon-mensagem-copy.png" alt="Sucesso">
+				<h2>Obrigado. :)</h2>
+				<p>Equipe Dito</p>
+			</div>
+		</div>
+	</div>
 {% endblock %}
