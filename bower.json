@@ -1,19 +1,20 @@
 {
-    "name": "sqone",
-    "version": "1.0.0",
-    "repository": "git://github.com/alistairtweedie/sqone.git",
-    "authors": "@alistairtweedie",
-    "description": "Build ⚡ lightening fast static sites",
-    "license": "MIT",
-    "private": true,
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "reports",
-        "public"
-    ],
-    "dependencies": {
-        "normalize-css": "8.0.0",
-        "lt-ie-9": "0.1.0"
-    }
+  "name": "sqone",
+  "version": "1.0.0",
+  "repository": "git://github.com/alistairtweedie/sqone.git",
+  "authors": "@alistairtweedie",
+  "description": "Build ⚡ lightening fast static sites",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "reports",
+    "public"
+  ],
+  "dependencies": {
+    "normalize-css": "8.0.0",
+    "lt-ie-9": "0.1.0",
+    "Pintsize": "pintsize#^2.0.0"
+  }
 }
