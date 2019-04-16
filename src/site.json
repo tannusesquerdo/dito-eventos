@@ -2,7 +2,7 @@
     "site": {
 
         "name": "Dito Eventos",
-        "url": "http://localhost:3000",
+        "url": "https://nifty-montalcini-becfb9.netlify.com/",
         "description": "",
         "author": "Dito",
         "googleanalyticsid": "UA-XXXXX-X"
@@ -18,7 +18,7 @@
         },
         "production": {
 
-            "hostname": "hostname.yourserve.example",
+            "hostname": "https://nifty-montalcini-becfb9.netlify.com/",
             "username": "hostusernameexample",
             "destination": "link/to/your/directory"
 
