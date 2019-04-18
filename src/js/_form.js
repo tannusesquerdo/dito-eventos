@@ -22,7 +22,7 @@
 
   $(document).ready(function(){
     $.getJSON('https://api.sheety.co/a2cbeff0-295a-49e3-87a3-d1824d75af43', function(data) {
-      if(data.length && data[0].evento) {
+      if(data.length && data[0].event) {
         event = data[0].event;
         dataEvento = data[0].date;
         show(form);
