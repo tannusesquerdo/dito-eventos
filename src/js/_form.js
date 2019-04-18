@@ -16,6 +16,17 @@
   var btnIdentify = document.getElementById('btn-submit');
   var form = document.getElementById('form-event');
   var success = document.getElementById('success');
+  var form = document.getElementById('form-event');
+  var event = null
+
+  $(document).ready(function(){
+    $.getJSON('https://api.sheety.co/a2cbeff0-295a-49e3-87a3-d1824d75af43', function(data) {
+      if(data.length && data[0].evento) {
+        event = data[0].evento;
+        show(form);
+      }
+    })
+  })
 
   btnIdentify.addEventListener('click', function(e) {
     e.preventDefault();
@@ -33,7 +44,7 @@
     if(validate(email)) {
       var id = dito.generateID(email);
       var data = { id_type: 'id', id: id, email: email, name: name, data: data };
-      var eventData = { event: JSON.stringify({ action: 'participou-evento', data: { evento: '3 Meetup Engenharia de Dados' } })};
+      var eventData = { event: JSON.stringify({ action: 'participou-evento', data: { evento: event } })};
   
       dito.Api.post('login', '/users/portal/'+id+'/signup', data, function(res) {
         if(res.data) {

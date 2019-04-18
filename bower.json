@@ -15,6 +15,7 @@
   "dependencies": {
     "normalize-css": "8.0.0",
     "lt-ie-9": "0.1.0",
-    "Pintsize": "pintsize#^2.0.0"
+    "Pintsize": "pintsize#^2.0.0",
+    "fakeLoader": "fakeloader#^1.1.0"
   }
 }

@@ -9,6 +9,10 @@ gulp.task('build-libs', function () {
     .pipe(!!util.env.production ? uglify() : util.noop())
     .pipe(gulp.dest('./public/libs/'));
 
+    gulp.src('./src/libs/fakeLoader/fakeLoader.min.js')
+    .pipe(!!util.env.production ? uglify() : util.noop())
+    .pipe(gulp.dest('./public/libs/'));
+
     gulp.src('./src/libs/picturefill/dist/picturefill.js')
     .pipe(!!util.env.production ? uglify() : util.noop())
     .pipe(gulp.dest('./public/libs/'));
