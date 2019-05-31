@@ -5,52 +5,58 @@
 {% block content %}
 	<div class="flex flex--center">
 		<div class="col col--12 col__lg--6">
-			<form action="" id="form-event" class="form-event" novalidate="novalidate">
-				<p>
-					<label> Seu nome (obrigatório)<br>
-						<span class="form-control-wrap">
-							<input type="text" id="name" name="name" value="" placeholder="Digite seu nome" aria-required="true" aria-invalid="false">
-						</span>
-					</label>
-				</p>
-				<p>
-					<label> Seu e-mail (obrigatório)<br>
-						<span class="wpcf7-form-control-wrap">
-							<input type="text" id="email" name="email" value="" placeholder="Digite seu email" aria-required="true" aria-invalid="false">
-						</span>
-					</label>
-				</p>
-				<p>
-					<label> Seu telefone<br>
-						<span class="wpcf7-form-control-wrap">
-							<input type="text" id="phone" name="phone" value="" placeholder="Digite seu telefone" aria-required="true" aria-invalid="false">
-						</span>
-					</label>
-				</p>
-				<p>
-					<label> Seu cargo<br>
-						<span class="wpcf7-form-control-wrap">
-							<input type="text" id="cargo" name="cargo" value="" placeholder="Digite seu cargo">
-						</span>
-					</label>
-				</p>
-				<p>
-					<label> Sua empresa<br>
-						<span class="wpcf7-form-control-wrap">
-							<input type="text" id="company" name="company" value="" placeholder="Digite a empresa">
-						</span>
-					</label>
-				</p>
+			<div id="form-event">
+				<div>
+					<h3 style="margin-top: 0">Bem-vindo ao meetup,<br></h3>
+					<h3 id="event-name"></h3>
+				</div>
+				<form action="" class="form-event" novalidate="novalidate">
+					<p>
+						<label> Seu nome (obrigatório)<br>
+							<span class="form-control-wrap">
+								<input type="text" id="name" name="name" value="" placeholder="Digite seu nome" aria-required="true" aria-invalid="false">
+							</span>
+						</label>
+					</p>
+					<p>
+						<label> Seu e-mail (obrigatório)<br>
+							<span class="wpcf7-form-control-wrap">
+								<input type="text" id="email" name="email" value="" placeholder="Digite seu email" aria-required="true" aria-invalid="false">
+							</span>
+						</label>
+					</p>
+					<p>
+						<label> Seu telefone<br>
+							<span class="wpcf7-form-control-wrap">
+								<input type="text" id="phone" name="phone" value="" placeholder="Digite seu telefone" aria-required="true" aria-invalid="false">
+							</span>
+						</label>
+					</p>
+					<p>
+						<label> Seu cargo<br>
+							<span class="wpcf7-form-control-wrap">
+								<input type="text" id="cargo" name="cargo" value="" placeholder="Digite seu cargo">
+							</span>
+						</label>
+					</p>
+					<p>
+						<label> Sua empresa<br>
+							<span class="wpcf7-form-control-wrap">
+								<input type="text" id="company" name="company" value="" placeholder="Digite a empresa">
+							</span>
+						</label>
+					</p>
 
-				<p>
-					<button type="submit" id="btn-submit" class="form-submit">
-						<span>Enviar</span>
-						<div class="circle" size="27">
-							<div class="triangle" size="4" color="#FFFFFF" direction="right"></div>
-						</div>
-					</button>
-				</p>
-			</form>
+					<p>
+						<button type="submit" id="btn-submit" class="form-submit">
+							<span>Enviar</span>
+							<div class="circle" size="27">
+								<div class="triangle" size="4" color="#FFFFFF" direction="right"></div>
+							</div>
+						</button>
+					</p>
+				</form>
+			</div>
 			<div id="success" class="success">
 				<img src="/images/icon-mensagem-copy.png" alt="Obrigado por dua presença">
 				<h3>Obrigado por sua presença.</h2>

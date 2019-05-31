@@ -16,7 +16,7 @@
   var btnIdentify = document.getElementById('btn-submit');
   var form = document.getElementById('form-event');
   var success = document.getElementById('success');
-  var form = document.getElementById('form-event');
+  var eventName = document.getElementById('event-name');
   var event = undefined;
   var dataEvento = undefined;
 
@@ -25,6 +25,8 @@
       if(data.length && data[0].event) {
         event = data[0].event;
         dataEvento = data[0].date;
+        eventName.innerText = data[0].event;
+        console.log(data[0].event);
         show(form);
       }
     })
@@ -57,8 +59,7 @@
             show(success);
 
             setTimeout(function() { 
-              hide(success);
-              show(form);
+              location = 'https://dito.com.br/trabalheconosco'
             }, 4000);
           });
         }

@@ -6,8 +6,28 @@
   background-color: #fff;
   min-height: 550px;
 
-  .form-event {
+  #form-event {
     display: none;
+
+    #event-name {
+      color: #36b274;
+      font-size: 1.8em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      margin: 0;
+      line-height: 1.2
+    }
+
+    @media only screen and (max-width: 600px) {
+      h3 {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .form-event {
 
     p {
       margin: 0;
