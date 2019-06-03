@@ -14,7 +14,8 @@
   };
 
   var btnIdentify = document.getElementById('btn-submit');
-  var form = document.getElementById('form-event');
+  var formDiv = document.getElementById('form-event');
+  var form = document.getElementById('form');
   var success = document.getElementById('success');
   var eventName = document.getElementById('event-name');
   var event = undefined;
@@ -26,8 +27,7 @@
         event = data[0].event;
         dataEvento = data[0].date;
         eventName.innerText = data[0].event;
-        console.log(data[0].event);
-        show(form);
+        show(formDiv);
       }
     })
   })
@@ -55,7 +55,7 @@
           var ref = res.data.reference;
           dito.Api.post('events', '/users/'+ref, eventData, function(res) {
             form.reset();
-            hide(form);
+            hide(formDiv);
             show(success);
 
             setTimeout(function() { 
